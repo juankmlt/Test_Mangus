@@ -23,6 +23,7 @@ import { RolModule } from './rol/rol.module';
         database: 'mangus_db',
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
+        logging: false
       }),
     }),
     RolModule

@@ -13,7 +13,7 @@ export class RolService {
 
     async getAll(): Promise<RolEntity[]> {
         const list = await this.rolRepository.find();
-        if(list.length) {
+        if(list.length < 0) {
             throw new NotFoundException({message: 'the list is empty'});
         }
         return list;
