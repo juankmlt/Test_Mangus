@@ -6,6 +6,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config/constants';
 import { RolModule } from './rol/rol.module';
+import { ClientModule } from './client/client.module';
+import { UserModule } from './user/user.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @Module({
   imports: [
@@ -26,7 +29,10 @@ import { RolModule } from './rol/rol.module';
         logging: false
       }),
     }),
-    RolModule
+    RolModule,
+    ClientModule,
+    UserModule,
+    EmployeeModule
   ],
   controllers: [AppController],
   providers: [AppService],
